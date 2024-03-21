@@ -83,17 +83,25 @@ class BooleanRetrieval:
 # Example usage:
 if __name__ == "__main__":
     indexer = BooleanRetrieval()
+
+   
     documents = {
         1: "Python is a programming language",
         2: "Information retrieval deals with finding information",
         3: "Boolean models are used in information retrieval"
     }
+
     for doc_id, text in documents.items():
         indexer.index_document(doc_id, text)
-        
+
+    
     indexer.create_documents_matrix(documents)
     indexer.print_documents_matrix_table()
+
+
     indexer.print_all_terms()
+
+
     query1 = input("Enter your boolean query: ")
     results = indexer.boolean_search(query1)
     if results:
